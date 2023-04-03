@@ -56,6 +56,17 @@ dependencies {
     implementation("androidx.compose.material3:material3:$material_version")
     implementation("androidx.compose.material3:material3-window-size-class:$material_version")
 
+    //KTOR
+    implementation "io.ktor:ktor-client-core:$ktor"
+    implementation "io.ktor:ktor-client-okhttp:$ktor"
+    implementation "io.ktor:ktor-serialization-kotlinx-json:$ktor"
+    implementation "io.ktor:ktor-client-logging:$ktor"
+    implementation "io.ktor:ktor-client-content-negotiation:$ktor"
+    testImplementation "io.ktor:ktor-serialization-jackson:$ktor"
+
+    //KOIN
+    implementation "io.insert-koin:koin-android:$koin"
+
     testImplementation 'junit:junit:4.13.2'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
