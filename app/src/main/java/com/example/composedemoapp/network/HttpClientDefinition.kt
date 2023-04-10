@@ -59,6 +59,7 @@ class HttpClientDefinition(
     }
 
     companion object {
-        const val BASE_URL = "https://api.spacexdata.com/v5/"
+        const val BASE_URL = "https://api.spacexdata.com/"
+        const val LAUNCHES_URL = "v5/launches"
     }
 }
