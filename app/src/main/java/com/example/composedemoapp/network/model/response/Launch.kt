@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Launches(
+data class Launch(
     @SerialName("fairings") var fairings: Fairings? = Fairings(),
     @SerialName("links") var links: Links? = Links(),
     @SerialName("static_fire_date_utc") var staticFireDateUtc: String? = null,

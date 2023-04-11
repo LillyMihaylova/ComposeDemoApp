@@ -11,7 +11,8 @@ class LaunchesScreenVM(private val getLaunchesUseCase: GetLaunchesUseCase) : Vie
     fun getLaunches() {
         viewModelScope.launch {
             when (val response = getLaunchesUseCase()) {
-                is ResultUseCase.Success -> {}
+                is ResultUseCase.Success -> {
+                }
                 is ResultUseCase.Error -> {}
                 is ResultUseCase.NetworkError -> {}
             }
