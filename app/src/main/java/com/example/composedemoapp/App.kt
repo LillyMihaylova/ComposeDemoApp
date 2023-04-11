@@ -3,6 +3,7 @@ package com.example.composedemoapp
 import android.app.Application
 import com.example.composedemoapp.di.apiModule
 import com.example.composedemoapp.di.repositoryModule
+import com.example.composedemoapp.di.useCaseModule
 import com.example.composedemoapp.di.viewModelModule
 import com.example.composedemoapp.util.dispatcher.coroutineDispatcherProviderModule
 import org.koin.android.ext.koin.androidContext
@@ -28,7 +29,8 @@ class App : Application() {
                 coroutineDispatcherProviderModule,
                 apiModule,
                 repositoryModule,
-                viewModelModule
+                viewModelModule,
+                useCaseModule
             )
         }
     }

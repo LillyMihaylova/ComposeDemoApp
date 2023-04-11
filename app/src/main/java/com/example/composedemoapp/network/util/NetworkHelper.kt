@@ -1,6 +1,5 @@
 package com.example.composedemoapp.network.util
 
-import com.example.composedemoapp.network.throwable.HtmlResponseException
 import com.example.composedemoapp.network.throwable.NetworkConnectivityException
 import io.ktor.client.call.*
 import io.ktor.client.plugins.*
@@ -21,7 +20,6 @@ suspend inline fun <T, reified E> safeApiCall(
                     val error: E = exception.response.body()
                     ResultWrapper.Error(code, error)
                 }
-                is HtmlResponseException -> { ResultWrapper.BotProtectionError }
                 is NetworkConnectivityException -> ResultWrapper.NetworkError
                 else -> ResultWrapper.Error()
             }
@@ -36,7 +34,5 @@ sealed class ResultWrapper<out T, out E> {
         val code: Int? = null,
         val error: E? = null
     ) : ResultWrapper<Nothing, E>()
-
-    object BotProtectionError : ResultWrapper<Nothing, Nothing>()
     object NetworkError : ResultWrapper<Nothing, Nothing>()
 }
