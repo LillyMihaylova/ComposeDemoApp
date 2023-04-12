@@ -55,6 +55,7 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
     implementation("androidx.compose.material3:material3:$material_version")
     implementation("androidx.compose.material3:material3-window-size-class:$material_version")
+    implementation "androidx.compose.runtime:runtime-livedata:${compose_ui_version}"
 
     //KTOR
     implementation "io.ktor:ktor-client-core:$ktor"
@@ -66,6 +67,9 @@ dependencies {
 
     //KOIN
     implementation "io.insert-koin:koin-android:$koin"
+
+    //COIL
+    implementation "io.coil-kt:coil-compose:$coil"
 
     testImplementation 'junit:junit:4.13.2'
 

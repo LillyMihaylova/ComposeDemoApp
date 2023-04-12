@@ -10,9 +10,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.composedemoapp.ui.screen.LaunchesScreen
 import com.example.composedemoapp.ui.theme.ComposeDemoAppTheme
+import com.example.composedemoapp.viewmodel.LaunchesScreenVM
+import org.koin.android.ext.android.inject
 
 @ExperimentalMaterial3Api
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: LaunchesScreenVM by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LaunchesScreen(launchesCount = 10)
+                    LaunchesScreen(viewModel)
                 }
             }
         }
